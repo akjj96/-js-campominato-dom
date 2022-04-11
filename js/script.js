@@ -1,16 +1,3 @@
-/* <div class="gridrow">
-                <div class="box">
-                    <span>1</span>
-                </div>
-    </div> */
-
-            // template del box e della griglia
-
-//  1 . prendo l'input del livello di difficoltà dall'utente -al click sul bottone play una funzione setta il livello di difficooltà prendendo il valore del campo di input.          
- // 2. a seconda del livello selezionato definisco quanti quadrati devo creare
-// 3 creare la griglia di dimensioni uguale a quelle sclete quindi creare le celle
-// 4 nella creazione delle celle imposta classe altezza e larghezza
-
 document.getElementById('play').addEventListener('click', setLevel);
 
 // settiamo il livello
@@ -71,7 +58,7 @@ function setLevel(event){
 
 
 
-// settiamo la griglia 
+
 
 function generaGriglia(numSquare, celleperRiga){
 let app = document.getElementById('app');
@@ -79,7 +66,7 @@ app.innerHTML = '';
 let row = document.createElement('div');
 row.setAttribute('class','gridrow');
 
-// creo le celle quante sono per difficoltà
+
 
 for(let i = 1; i <= numSquare; i++){
     const square = generaCella(i, celleperRiga);
@@ -123,7 +110,7 @@ function coloraCella(){
 }
 
 
-// genera 16 bombe
+
 
 // utility
 function getRandomInt(min, max) { //FUNZIONE BASE PER GEN NUMERI
@@ -133,15 +120,7 @@ function getRandomInt(min, max) { //FUNZIONE BASE PER GEN NUMERI
 }
 
 
-// funzione gameover
 
-// qui devo mettere sia la fine dei miei attemps sia quando vado su una bomba
-// io ho gia il  numero massimo di tentativi per completare il gioco
-// ho gia la variabile con i tentativi
-// il game over è la fine dei miei tentativi
-// io devo scrivere che:
-// se il numero dei tentativi raggiunge il massimo (che è maxAttempt) allora ho vinto la partita
-// ma se io dovessi finire su una bomba il numero del maxattempt scende a zero e ho perso la partita
 function gameOver(){
     if(attemps <= maxAttempt){
         let sconfitta = document.write('Hai perso la partita');
@@ -157,6 +136,3 @@ function gameOver(){
 
 
 
-
-// 1- quando si clicca su una bomba e finisce la partita, evitare che si possa cliccare su altre celle
-// 2- quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
